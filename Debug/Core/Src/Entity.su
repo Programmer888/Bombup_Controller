@@ -1,0 +1,7 @@
+Entity.cpp:12:1:Entity::Entity()	16	static
+Entity.cpp:17:1:Entity::Entity(int, int)	24	static
+Entity.cpp:22:1:Entity::~Entity()	16	static
+Entity.cpp:22:1:virtual Entity::~Entity()	16	static
+Entity.cpp:26:5:int Entity::getX()	16	static
+Entity.cpp:31:5:int Entity::getY()	16	static
+Entity.cpp:36:6:void Entity::move(Direction)	16	static

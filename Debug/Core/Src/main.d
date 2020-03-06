@@ -22,7 +22,10 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
+ ../Core/Inc/Game.h ../Core/Inc/Controller.h ../Core/Inc/Level.h \
+ ../Core/Inc/Object.h ../Core/Inc/Entity.h ../Core/Inc/Player.h \
+ ../Core/Inc/Controller.h
 
 ../Core/Inc/main.h:
 
@@ -73,3 +76,17 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h:
+
+../Core/Inc/Game.h:
+
+../Core/Inc/Controller.h:
+
+../Core/Inc/Level.h:
+
+../Core/Inc/Object.h:
+
+../Core/Inc/Entity.h:
+
+../Core/Inc/Player.h:
+
+../Core/Inc/Controller.h:

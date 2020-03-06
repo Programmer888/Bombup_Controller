@@ -1,0 +1,5 @@
+Controller.cpp:10:1:Controller::Controller()	16	static
+Controller.cpp:15:1:Controller::~Controller()	16	static
+Controller.cpp:15:1:virtual Controller::~Controller()	16	static
+Controller.cpp:19:6:void Controller::setButtonPressed(Button)	16	static
+Controller.cpp:24:8:Button Controller::getButtonPressed()	16	static

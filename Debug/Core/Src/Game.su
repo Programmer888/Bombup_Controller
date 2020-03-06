@@ -1,0 +1,6 @@
+Game.cpp:14:1:Game::Game()	24	static
+Game.cpp:19:1:Game::~Game()	16	static
+Game.cpp:19:1:virtual Game::~Game()	16	static
+Game.cpp:23:6:void Game::update()	16	static
+Game.cpp:36:6:void Game::setController1(Controller*)	16	static
+Game.cpp:41:6:void Game::setController2(Controller*)	16	static

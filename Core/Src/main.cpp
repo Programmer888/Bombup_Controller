@@ -20,6 +20,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "Game.h"
+#include "Controller.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -95,17 +97,39 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  Controller controller1 = Controller();
+  Controller controller2 = Controller();
+
+  controller1.setButtonPressed(Button::Down);
+  Game *game = new Game();
+  game->setController1(&controller1);
+  game->setController2(&controller2);
+  //game->play();
+
+  controller1.setButtonPressed(Button::Up);
+
+  game->update();
+
+  //Button btn = game->get
+
   while (1)
   {
     /* USER CODE END WHILE */
 	  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == GPIO_PIN_SET)
 	  {
+		  while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == GPIO_PIN_SET);
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+		  HAL_Delay(5);
+		  controller1.setButtonPressed(Button::Down);
+		  //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 	  }
 	  else
 	  {
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+		  controller1.setButtonPressed(Button::None);
 	  }
+	  game->update();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

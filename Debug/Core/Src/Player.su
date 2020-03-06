@@ -1,0 +1,4 @@
+Player.cpp:10:1:Player::Player(char*, int, int)	24	static
+Player.cpp:16:1:Player::~Player()	16	static
+Player.cpp:16:1:virtual Player::~Player()	16	static
+Player.cpp:20:7:char* Player::getName()	16	static
