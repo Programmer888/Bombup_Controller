@@ -1,0 +1,4 @@
+main.cpp:65:5:int main()	8	static
+main.cpp:118:6:void SystemClock_Config()	80	static
+main.cpp:152:13:void MX_GPIO_Init()	48	static
+main.cpp:186:6:void Error_Handler()	8	static
