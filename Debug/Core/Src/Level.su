@@ -2,4 +2,4 @@ Level.cpp:11:1:Level::Level(int, int, int)	32	static
 Level.cpp:24:1:Level::~Level()	24	static
 Level.cpp:24:1:virtual Level::~Level()	16	static
 Level.cpp:29:6:void Level::update(Controller*, Controller*)	32	static
-Level.cpp:74:6:void Level::draw()	24	static
+Level.cpp:76:6:void Level::draw()	24	static

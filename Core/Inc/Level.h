@@ -13,6 +13,8 @@
 #include "Entity.h"
 #include "Controller.h"
 #include "Player.h"
+#include "SPIConnect.h"
+
 
 class Level {
 public:
@@ -27,6 +29,7 @@ private:
 	int staticObjectCount;
 	Player *player1;
 	Player *player2;
+	SPIConnect *spi_instance;
 };
 
 #endif /* LEVEL_H_ */

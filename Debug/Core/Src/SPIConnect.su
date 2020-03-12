@@ -1,0 +1,6 @@
+SPIConnect.cpp:14:6:void Error_Handler()	8	static
+SPIConnect.cpp:22:13:void MX_SPI2_Init()	8	static
+SPIConnect.cpp:59:1:SPIConnect::SPIConnect()	16	static
+SPIConnect.cpp:64:1:SPIConnect::~SPIConnect()	16	static
+SPIConnect.cpp:64:1:virtual SPIConnect::~SPIConnect()	16	static
+SPIConnect.cpp:68:6:void SPIConnect::write(uint8_t)	32	static

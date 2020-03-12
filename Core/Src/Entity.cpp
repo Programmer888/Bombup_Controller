@@ -35,16 +35,17 @@ int Entity::getY()
 
 void Entity::move(Direction dir)
 {
+	int distance = 10;
 	switch(dir)
 	{
 		case Direction::Up:
-			this->y -= 1;
+			this->y -= distance;
 		case Direction::Down:
-			this->y += 1;
+			this->y += distance;
 		case Direction::Left:
-			this->x -= 1;
+			this->x -= distance;
 		case Direction::Right:
-			this->x += 1;
+			this->x += distance;
 	}
 	//this->x += dir[0];
 	//this->y += dir[1];

@@ -13,11 +13,11 @@ Level::Level(int width, int height, int player_count)
 	this->entityCount = 0;
 	this->staticObjectCount = 0;
 
-	this->player1 = new Player("player1", 0, 0);
+	this->player1 = new Player("player1", 200, 200);
 	//this->player1->move();
 	this->player2 = new Player("player2", 0 ,0);
 	//this->player2->move(0,0);
-
+	this->spi_instance = new SPIConnect();
 
 }
 
@@ -60,7 +60,7 @@ void Level::update(Controller *controller1, Controller *controller2)
 			break;
 		}
 
-	for(int i = 0; i < this->entityCount; i++)
+	/*for(int i = 0; i < this->entityCount; i++)
 	{
 
 	}
@@ -68,7 +68,9 @@ void Level::update(Controller *controller1, Controller *controller2)
 	for(int i = 0; i < this->staticObjectCount; i++)
 	{
 
-	}
+	}*/
+	//spi_write(9);
+	spi_instance->write(this->player1->getX());
 }
 
 void Level::draw()
