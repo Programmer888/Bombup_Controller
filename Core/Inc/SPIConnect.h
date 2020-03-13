@@ -13,7 +13,7 @@ class SPIConnect {
 public:
 	SPIConnect();
 	virtual ~SPIConnect();
-	void write(uint8_t data);
+	void write(uint8_t address, uint16_t data);
 private:
 
 };

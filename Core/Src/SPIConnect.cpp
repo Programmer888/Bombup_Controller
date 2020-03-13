@@ -33,7 +33,7 @@ static void MX_SPI2_Init(void)
   hspi2.Instance = SPI2;
   hspi2.Init.Mode = SPI_MODE_MASTER;
   hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi2.Init.DataSize = SPI_DATASIZE_16BIT;
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_HARD_OUTPUT;
@@ -65,27 +65,20 @@ SPIConnect::~SPIConnect() {
 	// TODO Auto-generated destructor stub
 }
 
-void SPIConnect::write (uint8_t data)
+void SPIConnect::write (uint8_t address, uint16_t value)
 {
-	uint16_t data1 = 2;
-	uint8_t d1 = data1 >> 8;
-	uint8_t d2 = data1;
-	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);  // pull the cs pin low
-	//for(;;)
-	//{
-		//HAL_GPIO_WritePin (GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
-		//HAL_SPI_Transmit (&hspi2, &d1, sizeof(uint8_t), 100);  // write data to register
-		HAL_SPI_Transmit (&hspi2, &d2, sizeof(uint8_t), 100);  // write data to register
+	uint16_t d1 = 200;
+	//d1 |= (0x1 << 12);
+	uint16_t data = value | (address << 13);
+	//uint16_t data = 200;
 
-		//HAL_GPIO_WritePin (GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
-	//}
+	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);  // pull the cs pin low
+
+	HAL_SPI_Transmit (&hspi2, (uint8_t*)&data, sizeof(uint8_t), 100);  // write data to register
+
 	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_12, GPIO_PIN_SET);  // pull the cs pin high
-	//data[0] = address|0x40;  // multibyte write
-	//data[1] = value;
-	//data[0] =
-	//HAL_GPIO_WritePin (GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);  // pull the cs pin low
-	//HAL_SPI_Transmit (&hspi2, (uint8_t *)data[0], 8, 100);  // write data to register
-	//HAL_GPIO_WritePin (GPIOB, GPIO_PIN_12, GPIO_PIN_SET);  // pull the cs pin high
+
+	//HAL_Delay(1000);
 }
 
 

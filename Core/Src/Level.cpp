@@ -70,7 +70,8 @@ void Level::update(Controller *controller1, Controller *controller2)
 
 	}*/
 	//spi_write(9);
-	spi_instance->write(this->player1->getX());
+	spi_instance->write(0, this->player1->getX());
+	//spi_instance->write(7, this->player1->getY());
 }
 
 void Level::draw()
